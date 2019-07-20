@@ -2,19 +2,22 @@
 <html>
 
 <head>
-    <link rel="styles" href="/css/styles.css">
+    <title>Chat App</title>
+    <link rel="stylesheet" href="/css/styles.min.css">
 </head>
 
 <body>
-    <div>
-        <form action="\chat.html">
-            <h2>Join</h2>
-            <label>User Name</label>
-            <input type="text" name="userName" id="userName" required>
-            <label>Room</label>
-            <input type="text" name="room" id="room" required>
-            <button>Join</button>
-        </form>
+    <div class="centered-form">
+        <div class="centerd-form__box">
+            <h1>Join</h1>
+            <form action="\chat.html">
+                <label>User Name</label>
+                <input type="text" name="userName" placeholder="User Name" required>
+                <label>Room</label>
+                <input type="text" name="room" placeholder="room" required>
+                <button>Join</button>
+            </form>
+        </div>
     </div>
 </body>
 

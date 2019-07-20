@@ -1,15 +1,22 @@
 const users = []
 
 const addUser = (({ userName, id, room }) => {
+
     userName = userName.trim().toLowerCase();
     room = room.trim().toLowerCase();
-    const user = users.find((user) => user.userName === userName && user.room === room)
-    if (user)
-        return;
-    const newUser = { userName, room, id }
-    users.push(newUser)
-    return newUser;
+
+    if (!userName || !room)
+        return { error: 'user name and room is required' }
+
+    const existingUser = users.find((user) => user.userName === userName && user.room === room)
+    if (existingUser)
+        return { error: 'user name already in use' };
+
+    const user = { userName, room, id }
+    users.push(user)
+    return { user };
 })
+
 const getUser = (id) => {
     return users.find((user) => user.id === id)
 }
